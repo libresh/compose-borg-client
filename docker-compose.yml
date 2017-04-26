@@ -1,0 +1,12 @@
+backup:
+  image: indiehosters/borg
+  hostname: ${HOSTNAME}
+  environment:
+  - BORG_MODE=CLIENT
+  - BACKUP_FREQUENCY=3600
+  - BORG_FOLDER
+  - BORG_PASSPHRASE
+  volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
+  - /data/domains:/domains
+  - ./ssh/:/root/.ssh/
