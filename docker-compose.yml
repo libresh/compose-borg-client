@@ -20,3 +20,5 @@ services:
     - /data/domains:/domains
     - ./ssh/:/root/.ssh/
     - ./cache:/root/.cache
+    networks:
+    - back
