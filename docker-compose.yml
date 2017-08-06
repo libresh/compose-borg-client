@@ -20,5 +20,6 @@ services:
     - /data/domains:/domains
     - ./ssh/:/root/.ssh/
     - ./cache:/root/.cache
+    - /system/metrics-collection/textfiles:/textfiles
     networks:
     - back
