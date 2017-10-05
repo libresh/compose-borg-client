@@ -10,9 +10,15 @@ services:
   backup:
     image: indiehosters/borg
     hostname: ${HOSTNAME}
+    entrypoint: "cron"
+    command:
+    # - "--hours=*" # use $DC_HOURS to override this
+    - "--minutes=10"
+    - "--seconds=0"
+    - "--sync-jobs"
+    - "/entrypoint.sh"
     environment:
     - BORG_MODE=CLIENT
-    - BACKUP_FREQUENCY=3600
     - BORG_FOLDER
     - BORG_PASSPHRASE
     volumes:
