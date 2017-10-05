@@ -21,6 +21,7 @@ services:
     - BORG_MODE=CLIENT
     - BORG_FOLDER
     - BORG_PASSPHRASE
+    - DC_HOURS
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - /data/domains:/domains
